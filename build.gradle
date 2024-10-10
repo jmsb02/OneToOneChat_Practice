@@ -26,12 +26,23 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+	//다양한 브라우저에서 WebSocket을 사용할 수 없을 때 대체하기 위해 설계된 자바스크립트 라이브러리
+	implementation 'org.webjars:sockjs-client:1.5.1'
+
+	//클라이언트와 서버 간의 메시지 송수신을 위해 설계된 프로토콜
+	implementation 'org.webjars:stomp-websocket:2.3.4'
+
+	//구글이 개발한 자바 객체와 JSON 간의 변환을 위한 라이브러리
+	implementation 'com.google.code.gson:gson:2.10.1' // 최신 버전
+
 }
 
 tasks.named('test') {

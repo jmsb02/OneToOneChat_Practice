@@ -1,4 +1,4 @@
-package OneToOneChat_practice.Config;
+package OneToOneChat_practice.config;
 
 
 import org.springframework.context.annotation.Configuration;
@@ -16,13 +16,12 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     /**
-     * addEndpoint("/ws") - 클라이언트가 WebSocket 서버에 연결할 수 있는 엔드포인트 정의
-     * setAllowedOrigins("*") - CORS 설정 정의, 모든 출처에서의 연결 요청 허용
+     * addEndpoint("/ws-stomp") - 클라이언트가 WebSocket 서버에 연결할 수 있는 엔드포인트 정의
      */
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws")
-                .setAllowedOrigins("*");
+        registry.addEndpoint("/ws-stomp")
+                .withSockJS();
     }
 
     /**
