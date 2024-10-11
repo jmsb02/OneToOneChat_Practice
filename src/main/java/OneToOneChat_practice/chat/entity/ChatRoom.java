@@ -1,7 +1,9 @@
 package OneToOneChat_practice.chat.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -12,18 +14,24 @@ import java.util.UUID;
  */
 
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class ChatRoom {
     private String roomId;
     private String roomName;
-    private Long userCount;
+
+    @Setter
+    private int userCount;
 
     private HashMap<String, String> userList = new HashMap<String, String>(); //ex. userId, username 형식
 
-    public ChatRoom create(String roomName) {
-        ChatRoom chatRoom = new ChatRoom();
-        chatRoom.roomId = UUID.randomUUID().toString();
-        chatRoom.roomName = roomName;
 
-        return chatRoom;
+    public ChatRoom(String roomName) {
+        this.roomId = UUID.randomUUID().toString();
+        this.roomName = roomName;
+        this.userCount = 0;
     }
+
+
 }
