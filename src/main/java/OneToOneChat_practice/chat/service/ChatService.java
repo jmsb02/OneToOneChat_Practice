@@ -1,4 +1,4 @@
-package OneToOneChat_practice.chat.chatService;
+package OneToOneChat_practice.chat.service;
 
 
 import OneToOneChat_practice.chat.entity.ChatRoom;
