@@ -128,9 +128,9 @@ public class ChatService {
     }
 
     /**
-     * 채팅방 유저 리스트 삭제
+     * 채팅방 유저 삭제
      */
-    public void deleteUserList(String roomId, String userUUID) {
+    public void deleteUser(String roomId, String userUUID) {
         ChatRoom room = chatRoomMap.get(roomId);
         room.getUserList().remove(userUUID);
     }

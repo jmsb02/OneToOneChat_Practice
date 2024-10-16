@@ -1,14 +1,12 @@
 package OneToOneChat_practice.chat.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class ChatDto {
 
     public enum MessageType {
